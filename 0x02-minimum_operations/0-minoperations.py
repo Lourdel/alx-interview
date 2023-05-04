@@ -13,21 +13,22 @@ def minOperations(n):
 
     if n == 1:
         return 0
-    
+
     primes = get_primes(int(math.sqrt(n)))
-    
+
     op_list = [float('inf')] * (n+1)
     op_list[1] = 0
-    
+
     for i in range(2, n+1):
         for j in primes:
             if i % j == 0:
                 op_list[i] = min(op_list[i], op_list[j] + i//j)
-        
+
         if op_list[i] == float('inf'):
             op_list[i] = i
-    
+
     return op_list[n] if op_list[n] != float('inf') else 0
+
 
 def get_primes(n):
     """Method to get prime factors of n"""
@@ -41,4 +42,3 @@ def get_primes(n):
         if selection[i]:
             primes.append(i)
     return primes
-
