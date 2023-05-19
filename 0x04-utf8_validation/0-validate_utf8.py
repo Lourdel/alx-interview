@@ -18,4 +18,8 @@ def validUTF8(data):
                 bit_state -= 1
                 if bit_state == 0:
                     return False
+        elif bit_state > 0:
+            if num >> 6 != 2:
+                return False
+            bit_state -= 1
     return not bit_state
