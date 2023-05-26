@@ -42,6 +42,7 @@ def main(n):
     """ From root(0) down(n) """
     solve_queens(0, n, solution)
 
+
 if __name__ == '__main__':
     """ Validate the arguments from OS """
     if len(sys.argv) != 2:
