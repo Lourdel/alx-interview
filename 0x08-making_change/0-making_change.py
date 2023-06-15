@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Making change"""
 
 def makeChange(coins, total):
     """
@@ -19,7 +20,7 @@ def makeChange(coins, total):
 
     coin_count = 0
     for coin in coins:
-        coin_count += total // coin
+        coin_count += int(total // coin)
         total %= coin
 
     if total != 0:
